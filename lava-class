@@ -1,0 +1,22 @@
+clear all
+
+home = false; %Set to true if working from home, false if working from school. 
+
+%Images to label
+
+if home
+    filepath = ('F:\Fall 18\Seafloor Imaging\AL4847\AL4847-MISO-Downlooking-Processed');
+    addpath('F:\Fall 18\Seafloor Imaging\AL4847\AL4847-MISO-Downlooking-Processed');
+else
+    filepath = ('D:\Fall 18\Seafloor Imaging\AL4847\AL4847-MISO-Downlooking-Processed');
+    addpath('D:\Fall 18\Seafloor Imaging\AL4847\AL4847-MISO-Downlooking-Processed');
+end
+
+
+%create datastore
+imds = imageDatastore(filepath,'FileExtensions',{'.png'});
+
+%load labeling session
+%segLabels = ('segmentationLabeling.mat');
+
+%% Open image Labeler
